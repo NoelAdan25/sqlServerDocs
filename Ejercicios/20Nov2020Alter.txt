@@ -1,0 +1,14 @@
+/*   ALTERACION DE TAMAÑO DE UNA BASE DE DATOS 
+*/  
+/* */
+ ALTER DATABASE [estudiantes_upiita]
+ MODIFY FILE 
+ (NAME = estudiantes_upiita,
+  SIZE = 17,
+   MAXSIZE = 100)
+
+ ALTER DATABASE [estudiantes_upiita]
+ MODIFY FILE 
+ (NAME = estudiantes_ipiita_log,
+  SIZE = 4,
+   MAXSIZE = 50)

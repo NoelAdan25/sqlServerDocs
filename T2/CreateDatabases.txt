@@ -1,0 +1,16 @@
+CREATE DATABASE [estudiantes_upiita]
+ON PRIMARY 
+( NAME = 'estudiantes_upiita', 
+   FILENAME = 'C:\DOCUMENTOS\DATA\estudiantes_upiita.mdf' ,
+   SIZE = 4,
+   MAXSIZE = 100,
+   FILEGROWTH = 5
+ )
+ LOG ON 
+      ( NAME = 'estudiantes_ipiita_log',
+       FILENAME = 'C:\DOCUMENTOS\DATA\ estudiantes_upiita_log.ldf',
+ SIZE = 1,
+ MAXSIZE = 100,
+ FILEGROWTH = 5 
+)
+GO

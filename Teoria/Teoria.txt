@@ -1,0 +1,6 @@
+Métodos de replicación
+
+per to per de replicación 
+snapshot de replicación --> De un sólo lado
+merge de replicación
+Transacciones de replicación --> De un sólo lado

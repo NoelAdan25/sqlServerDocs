@@ -1,0 +1,19 @@
+CREATE DATABASE [estudiantes_upiita]
+ON PRIMARY 
+( NAME = 'estudiantes_upiita', 
+   FILENAME = 'C:\Users\Fernando Bermudez\Desktop\Documentos Escritorio\Base de datos Distribuidas' ,
+   SIZE = 20,
+   MAXSIZE = 50,
+   FILEGROWTH = 5
+ )
+ LOG ON 
+      ( NAME = 'estudiantes_ipiita_log',
+       FILENAME = 'C:\Users\Fernando Bermudez\Desktop\Documentos Escritorio\Base de datos Distribuidas',
+ SIZE = 1,
+ MAXSIZE = 50,
+ FILEGROWTH = 5 
+)
+GO
+
+
+

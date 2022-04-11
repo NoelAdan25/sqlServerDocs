@@ -1,0 +1,11 @@
+GO
+ALTER DATABASE estudiantes_upiita SET SINGLE_USER
+GO
+DBCC CHECKDB(estudiantes_upiita,REPAIR_ALLOW_DATA_LOSS) WITH ALL_ERRORMSGS;
+GO
+ALTER DATABASE estudiantes_upiita SET EMERGENCY;
+GO
+ALTER DATABASE estudiantes_upiita SET MULTI_USER
+GO
+EXEC sp_detach_db 'estudiantes_upiita'
+EXEC sp_attach_single_file_db @DBNAME='estudiantes_upiita',	@physname= N'C:\PRUEBABD\DATA1\estudiantes_upiita.mdf'

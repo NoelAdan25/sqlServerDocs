@@ -1,0 +1,58 @@
+Slein Henrik14:47
+  USE BASEDATOS_UPIITA
+  GO
+  GRANT VIEW DEFINITION ON OBJECT:: dbo._MIVISTA TO USUARIO_ALUMNO 
+Slein Henrik14:52
+
+  USE BASEDATOS_UPIITA
+  GO
+  --AGREGANDO EL OBJETO PARA QUE SE VISUALICE EN LA BASE DE DATOS
+  --GRANT VIEW DEFINITION ON OBJECT:: dbo._MIVISTA TO USUARIO_ALUMNO 
+  --DANDO PERMISOS DE LECTURA PARA LA VISTA
+  GRANT SELECT ON dbo._MIVISTA TO USUARIO_ALUMNO
+Slein Henrik14:57
+    USE BASEDATOS_UPIITA
+  GO
+  CREATE FUNCTION CONVERTIR_MAYUSCULAS( @VARIABLE_TEXTO  NVARCHAR(50) )
+ 
+  RETURNS NVARCHAR(50)  AS 
+  BEGIN 
+      RETURN  UPPER(@VARIABLE_TEXTO);
+  END
+  
+  USE BASEDATOS_UPIITA
+  GO
+  GRANT EXECUTE ON dbo.CONVERTIR_MAYUSCULAS TO USUARIO_ALUMNO
+  
+  
+    --QUITAMOS EL PERMISO A NIELS PARA CONSULTAR LA TABLA PROFESOR
+     USE BASEDATOS_UPIITA
+    GO
+    --DENY SELECT ON PROFESOR TO USUARIO_ALUMNO
+    --GRANT SELECT ON dbo._MIVISTA TO USUARIO_ALUMNO
+  DENY SELECT ON dbo._MIVISTA TO USUARIO_ALUMNO
+  
+  
+  
+   USE BASEDATOS_UPIITA
+    GO
+    
+    REVOKE SELECT ON OBJECT::[dbo].PROFESOR  FROM USUARIO_ALUMNO
+  
+  --GRANT SELECT ON PROFESOR TO USUARIO_ALUMNO;
+  
+  
+  
+  
+  
+  -- Crear 3 login para ANA, ALBERTO y ANDRES. Sus correspodinetes contraseñas son:
+  respectivamente
+  Por default la base de datos se llama prueb. Después de crear los logins, 
+  verificar si se registraron adecuadamente (ver en la carpeta de permisos)
+  
+  Crear 3 nuevas bases de datos a los usuarios del punto anterior. El nombre
+  de sus bases de datos son s_ANA, s_ALBERTO y s_ANDRES
+  
+  Cada usuario debe tener permisos de crear tablas, agregar registros, actualizar registros
+  pero no eliminar tablas ni registros
+ 
