@@ -1,0 +1,33 @@
+Parte del aspx
+<script runat="server">
+        String endSession()
+        {
+            Session.Clear();
+            Session.Add("Close", "true");
+            return String.Empty;
+        }
+    </script>
+    <script type="text/javascript">
+        window.addEventListener('beforeunload', function (event) {
+            event.preventDefault();
+            const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));
+            <%= endSession() %>
+            event.returnValue = 'window.lacation = www.sgied.com.mx';
+        }, true);
+    </script>
+
+
+Parte del back
+
+if (!IsPostBack)
+        {
+            if (Session["Close"] == null)
+            {
+                Session.Add("ID_Persona", "27");
+            }
+            else
+            {
+                Session.Clear();
+                Response.Redirect(@"http://www.sgied.com.mx");
+            }
+        }
